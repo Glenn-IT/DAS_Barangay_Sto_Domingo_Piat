@@ -17,143 +17,207 @@ Partial Class UserSearchArchivePanel
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        dgvSearchResults = New System.Windows.Forms.DataGridView()
-        colDocID         = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colDocTitle      = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colDateTime      = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colRemarks       = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colStatus        = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        pnlTop           = New System.Windows.Forms.Panel()
-        lblTitle         = New System.Windows.Forms.Label()
-        pnlSearch        = New System.Windows.Forms.Panel()
-        txtSearchQuery   = New System.Windows.Forms.TextBox()
-        btnSearch        = New System.Windows.Forms.Button()
-        lblSearchIcon    = New System.Windows.Forms.Label()
-
-        Me.SuspendLayout()
-
-        Dim dark  As System.Drawing.Color = System.Drawing.Color.FromArgb(52, 103, 57)
-        Dim mid   As System.Drawing.Color = System.Drawing.Color.FromArgb(121, 174, 111)
-        Dim cream As System.Drawing.Color = System.Drawing.Color.FromArgb(242, 237, 194)
-
-        ' ?? pnlTop (title bar) ????????????????????????????????????
-        pnlTop.BackColor = mid
-        pnlTop.Dock      = System.Windows.Forms.DockStyle.Top
-        pnlTop.Height    = 52
-        pnlTop.Name      = "pnlTop"
-
-        lblTitle.AutoSize  = False
-        lblTitle.Text      = "Search Archive"
-        lblTitle.Font      = New System.Drawing.Font("Segoe UI", 13, System.Drawing.FontStyle.Bold)
-        lblTitle.ForeColor = System.Drawing.Color.White
-        lblTitle.BackColor = System.Drawing.Color.Transparent
-        lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        lblTitle.Dock      = System.Windows.Forms.DockStyle.Fill
-        lblTitle.Padding   = New System.Windows.Forms.Padding(16, 0, 0, 0)
-        lblTitle.Name      = "lblTitle"
-
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        dgvSearchResults = New DataGridView()
+        colDocID = New DataGridViewTextBoxColumn()
+        colDocTitle = New DataGridViewTextBoxColumn()
+        colDateTime = New DataGridViewTextBoxColumn()
+        colRemarks = New DataGridViewTextBoxColumn()
+        colStatus = New DataGridViewTextBoxColumn()
+        pnlTop = New Panel()
+        lblTitle = New Label()
+        pnlSearch = New Panel()
+        lblSearchIcon = New Label()
+        txtSearchQuery = New TextBox()
+        btnSearch = New Button()
+        CType(dgvSearchResults, ComponentModel.ISupportInitialize).BeginInit()
+        pnlTop.SuspendLayout()
+        pnlSearch.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' dgvSearchResults
+        ' 
+        dgvSearchResults.AllowUserToAddRows = False
+        dgvSearchResults.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(230), CByte(226), CByte(180))
+        dgvSearchResults.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        dgvSearchResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvSearchResults.BackgroundColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        dgvSearchResults.BorderStyle = BorderStyle.None
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        dgvSearchResults.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        dgvSearchResults.ColumnHeadersHeight = 36
+        dgvSearchResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvSearchResults.Columns.AddRange(New DataGridViewColumn() {colDocID, colDocTitle, colDateTime, colRemarks, colStatus})
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle4.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        DataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        DataGridViewCellStyle4.SelectionForeColor = Color.White
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        dgvSearchResults.DefaultCellStyle = DataGridViewCellStyle4
+        dgvSearchResults.Dock = DockStyle.Fill
+        dgvSearchResults.EnableHeadersVisualStyles = False
+        dgvSearchResults.Font = New Font("Segoe UI", 9F)
+        dgvSearchResults.GridColor = Color.FromArgb(CByte(159), CByte(203), CByte(152))
+        dgvSearchResults.Location = New Point(0, 104)
+        dgvSearchResults.MultiSelect = False
+        dgvSearchResults.Name = "dgvSearchResults"
+        dgvSearchResults.ReadOnly = True
+        dgvSearchResults.RowHeadersVisible = False
+        dgvSearchResults.RowHeadersWidth = 45
+        dgvSearchResults.RowTemplate.Height = 32
+        dgvSearchResults.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvSearchResults.Size = New Size(880, 492)
+        dgvSearchResults.TabIndex = 2
+        ' 
+        ' colDocID
+        ' 
+        colDocID.FillWeight = 14F
+        colDocID.HeaderText = "Document ID"
+        colDocID.MinimumWidth = 6
+        colDocID.Name = "colDocID"
+        colDocID.ReadOnly = True
+        ' 
+        ' colDocTitle
+        ' 
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        colDocTitle.DefaultCellStyle = DataGridViewCellStyle3
+        colDocTitle.FillWeight = 34F
+        colDocTitle.HeaderText = "Document Title"
+        colDocTitle.MinimumWidth = 6
+        colDocTitle.Name = "colDocTitle"
+        colDocTitle.ReadOnly = True
+        ' 
+        ' colDateTime
+        ' 
+        colDateTime.FillWeight = 20F
+        colDateTime.HeaderText = "Date and Time"
+        colDateTime.MinimumWidth = 6
+        colDateTime.Name = "colDateTime"
+        colDateTime.ReadOnly = True
+        ' 
+        ' colRemarks
+        ' 
+        colRemarks.FillWeight = 18F
+        colRemarks.HeaderText = "Remarks"
+        colRemarks.MinimumWidth = 6
+        colRemarks.Name = "colRemarks"
+        colRemarks.ReadOnly = True
+        ' 
+        ' colStatus
+        ' 
+        colStatus.FillWeight = 14F
+        colStatus.HeaderText = "Status"
+        colStatus.MinimumWidth = 6
+        colStatus.Name = "colStatus"
+        colStatus.ReadOnly = True
+        ' 
+        ' pnlTop
+        ' 
+        pnlTop.BackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
         pnlTop.Controls.Add(lblTitle)
-
-        ' ?? pnlSearch (dedicated search row below title) ??????????
-        pnlSearch.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
-        pnlSearch.Dock      = System.Windows.Forms.DockStyle.Top
-        pnlSearch.Height    = 52
-        pnlSearch.Name      = "pnlSearch"
-        pnlSearch.Padding   = New System.Windows.Forms.Padding(16, 10, 16, 10)
-
-        lblSearchIcon.AutoSize  = False
-        lblSearchIcon.Text      = "??"
-        lblSearchIcon.Font      = New System.Drawing.Font("Segoe UI", 11)
-        lblSearchIcon.ForeColor = dark
-        lblSearchIcon.BackColor = System.Drawing.Color.Transparent
-        lblSearchIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        lblSearchIcon.Size      = New System.Drawing.Size(32, 32)
-        lblSearchIcon.Location  = New System.Drawing.Point(16, 10)
-        lblSearchIcon.Name      = "lblSearchIcon"
-
-        txtSearchQuery.Font            = New System.Drawing.Font("Segoe UI", 10)
-        txtSearchQuery.Height          = 32
-        txtSearchQuery.Location        = New System.Drawing.Point(52, 10)
-        txtSearchQuery.BackColor       = cream
-        txtSearchQuery.ForeColor       = dark
-        txtSearchQuery.BorderStyle     = System.Windows.Forms.BorderStyle.FixedSingle
-        txtSearchQuery.PlaceholderText = "Type to search documents..."
-        txtSearchQuery.Anchor          = System.Windows.Forms.AnchorStyles.Top Or
-                                         System.Windows.Forms.AnchorStyles.Left Or
-                                         System.Windows.Forms.AnchorStyles.Right
-        txtSearchQuery.Name            = "txtSearchQuery"
-        txtSearchQuery.TabIndex        = 0
-
-        btnSearch.Text                              = "Search"
-        btnSearch.Font                              = New System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold)
-        btnSearch.BackColor                         = dark
-        btnSearch.ForeColor                         = cream
-        btnSearch.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnSearch.FlatAppearance.BorderSize         = 0
-        btnSearch.FlatAppearance.MouseOverBackColor = mid
-        btnSearch.Size                              = New System.Drawing.Size(90, 32)
-        btnSearch.Anchor                            = System.Windows.Forms.AnchorStyles.Top Or
-                                                      System.Windows.Forms.AnchorStyles.Right
-        btnSearch.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnSearch.Name                              = "btnSearch"
-        btnSearch.TabIndex                          = 1
-
+        pnlTop.Dock = DockStyle.Top
+        pnlTop.Location = New Point(0, 0)
+        pnlTop.Name = "pnlTop"
+        pnlTop.Size = New Size(880, 52)
+        pnlTop.TabIndex = 4
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.BackColor = Color.Transparent
+        lblTitle.Dock = DockStyle.Fill
+        lblTitle.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.White
+        lblTitle.Location = New Point(0, 0)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Padding = New Padding(16, 0, 0, 0)
+        lblTitle.Size = New Size(880, 52)
+        lblTitle.TabIndex = 0
+        lblTitle.Text = "Search Archive"
+        lblTitle.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' pnlSearch
+        ' 
+        pnlSearch.BackColor = Color.FromArgb(CByte(230), CByte(226), CByte(180))
         pnlSearch.Controls.Add(lblSearchIcon)
         pnlSearch.Controls.Add(txtSearchQuery)
         pnlSearch.Controls.Add(btnSearch)
-
-        ' ?? dgvSearchResults ??????????????????????????????????????
-        dgvSearchResults.Dock                  = System.Windows.Forms.DockStyle.Fill
-        dgvSearchResults.Name                  = "dgvSearchResults"
-        dgvSearchResults.ReadOnly              = True
-        dgvSearchResults.AllowUserToAddRows    = False
-        dgvSearchResults.AllowUserToDeleteRows = False
-        dgvSearchResults.SelectionMode         = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        dgvSearchResults.MultiSelect           = False
-        dgvSearchResults.RowHeadersVisible     = False
-        dgvSearchResults.AutoSizeColumnsMode   = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        dgvSearchResults.BackgroundColor       = cream
-        dgvSearchResults.BorderStyle           = System.Windows.Forms.BorderStyle.None
-        dgvSearchResults.GridColor             = System.Drawing.Color.FromArgb(159, 203, 152)
-        dgvSearchResults.Font                  = New System.Drawing.Font("Segoe UI", 9)
-        dgvSearchResults.TabIndex              = 2
-
-        dgvSearchResults.ColumnHeadersDefaultCellStyle.BackColor  = dark
-        dgvSearchResults.ColumnHeadersDefaultCellStyle.ForeColor  = cream
-        dgvSearchResults.ColumnHeadersDefaultCellStyle.Font       = New System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold)
-        dgvSearchResults.ColumnHeadersDefaultCellStyle.Alignment  = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        dgvSearchResults.ColumnHeadersHeight                      = 36
-        dgvSearchResults.ColumnHeadersHeightSizeMode              = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvSearchResults.EnableHeadersVisualStyles                = False
-
-        dgvSearchResults.DefaultCellStyle.BackColor          = cream
-        dgvSearchResults.DefaultCellStyle.ForeColor          = dark
-        dgvSearchResults.DefaultCellStyle.SelectionBackColor = mid
-        dgvSearchResults.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White
-        dgvSearchResults.DefaultCellStyle.Alignment         = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        dgvSearchResults.RowTemplate.Height                 = 32
-        dgvSearchResults.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
-
-        colDocID.Name    = "colDocID"    : colDocID.HeaderText    = "Document ID"    : colDocID.FillWeight    = 14
-        colDocTitle.Name = "colDocTitle" : colDocTitle.HeaderText = "Document Title"  : colDocTitle.FillWeight = 34
-        colDocTitle.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        colDateTime.Name = "colDateTime" : colDateTime.HeaderText = "Date and Time"   : colDateTime.FillWeight = 20
-        colRemarks.Name  = "colRemarks"  : colRemarks.HeaderText  = "Remarks"          : colRemarks.FillWeight  = 18
-        colStatus.Name   = "colStatus"   : colStatus.HeaderText   = "Status"           : colStatus.FillWeight   = 14
-
-        dgvSearchResults.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {
-            colDocID, colDocTitle, colDateTime, colRemarks, colStatus
-        })
-
-        Me.Controls.Add(dgvSearchResults)
-        Me.Controls.Add(pnlSearch)
-        Me.Controls.Add(pnlTop)
-        Me.BackColor     = cream
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Name          = "UserSearchArchivePanel"
-        Me.Size          = New System.Drawing.Size(880, 596)
-
-        Me.ResumeLayout(False)
+        pnlSearch.Dock = DockStyle.Top
+        pnlSearch.Location = New Point(0, 52)
+        pnlSearch.Name = "pnlSearch"
+        pnlSearch.Padding = New Padding(16, 10, 16, 10)
+        pnlSearch.Size = New Size(880, 52)
+        pnlSearch.TabIndex = 3
+        ' 
+        ' lblSearchIcon
+        ' 
+        lblSearchIcon.BackColor = Color.Transparent
+        lblSearchIcon.Font = New Font("Segoe UI", 11F)
+        lblSearchIcon.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        lblSearchIcon.Location = New Point(16, 10)
+        lblSearchIcon.Name = "lblSearchIcon"
+        lblSearchIcon.Size = New Size(32, 32)
+        lblSearchIcon.TabIndex = 0
+        lblSearchIcon.Text = "??"
+        lblSearchIcon.TextAlign = ContentAlignment.MiddleCenter
+        lblSearchIcon.Visible = False
+        ' 
+        ' txtSearchQuery
+        ' 
+        txtSearchQuery.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtSearchQuery.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        txtSearchQuery.BorderStyle = BorderStyle.FixedSingle
+        txtSearchQuery.Font = New Font("Segoe UI", 10F)
+        txtSearchQuery.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        txtSearchQuery.Location = New Point(52, 10)
+        txtSearchQuery.Name = "txtSearchQuery"
+        txtSearchQuery.PlaceholderText = "Type to search documents..."
+        txtSearchQuery.Size = New Size(780, 27)
+        txtSearchQuery.TabIndex = 0
+        ' 
+        ' btnSearch
+        ' 
+        btnSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnSearch.BackColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        btnSearch.Cursor = Cursors.Hand
+        btnSearch.FlatAppearance.BorderSize = 0
+        btnSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        btnSearch.FlatStyle = FlatStyle.Flat
+        btnSearch.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnSearch.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        btnSearch.Location = New Point(680, 0)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(90, 32)
+        btnSearch.TabIndex = 1
+        btnSearch.Text = "Search"
+        btnSearch.UseVisualStyleBackColor = False
+        ' 
+        ' UserSearchArchivePanel
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 17F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        Controls.Add(dgvSearchResults)
+        Controls.Add(pnlSearch)
+        Controls.Add(pnlTop)
+        Name = "UserSearchArchivePanel"
+        Size = New Size(880, 596)
+        CType(dgvSearchResults, ComponentModel.ISupportInitialize).EndInit()
+        pnlTop.ResumeLayout(False)
+        pnlSearch.ResumeLayout(False)
+        pnlSearch.PerformLayout()
+        ResumeLayout(False)
     End Sub
 
     Friend WithEvents dgvSearchResults As System.Windows.Forms.DataGridView

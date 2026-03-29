@@ -17,200 +17,259 @@ Partial Class AdminArchiveListPanel
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        dgvArchiveList    = New System.Windows.Forms.DataGridView()
-        colDocID          = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colDocTitle       = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colUploadedBy     = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colDateTime       = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        colStatus         = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        pnlTop            = New System.Windows.Forms.Panel()
-        lblTitle          = New System.Windows.Forms.Label()
-        pnlSearch         = New System.Windows.Forms.Panel()
-        lblSearchIcon     = New System.Windows.Forms.Label()
-        txtSearch         = New System.Windows.Forms.TextBox()
-        btnSearch         = New System.Windows.Forms.Button()
-        pnlActions        = New System.Windows.Forms.Panel()
-        btnAddDocument    = New System.Windows.Forms.Button()
-        btnUpdateDocument = New System.Windows.Forms.Button()
-        btnDeleteDocument = New System.Windows.Forms.Button()
-
-        Me.SuspendLayout()
-
-        Dim dark  As System.Drawing.Color = System.Drawing.Color.FromArgb(52, 103, 57)
-        Dim mid   As System.Drawing.Color = System.Drawing.Color.FromArgb(121, 174, 111)
-        Dim cream As System.Drawing.Color = System.Drawing.Color.FromArgb(242, 237, 194)
-
-        ' ?? pnlTop ????????????????????????????????????????????????
-        pnlTop.BackColor = mid
-        pnlTop.Dock      = System.Windows.Forms.DockStyle.Top
-        pnlTop.Height    = 52
-        pnlTop.Name      = "pnlTop"
-
-        lblTitle.AutoSize  = False
-        lblTitle.Text      = "Archive List"
-        lblTitle.Font      = New System.Drawing.Font("Segoe UI", 13, System.Drawing.FontStyle.Bold)
-        lblTitle.ForeColor = System.Drawing.Color.White
-        lblTitle.BackColor = System.Drawing.Color.Transparent
-        lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        lblTitle.Dock      = System.Windows.Forms.DockStyle.Fill
-        lblTitle.Padding   = New System.Windows.Forms.Padding(16, 0, 0, 0)
-        lblTitle.Name      = "lblTitle"
-
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        dgvArchiveList = New DataGridView()
+        colDocID = New DataGridViewTextBoxColumn()
+        colDocTitle = New DataGridViewTextBoxColumn()
+        colUploadedBy = New DataGridViewTextBoxColumn()
+        colDateTime = New DataGridViewTextBoxColumn()
+        colStatus = New DataGridViewTextBoxColumn()
+        pnlTop = New Panel()
+        lblTitle = New Label()
+        pnlSearch = New Panel()
+        txtSearch = New TextBox()
+        btnSearch = New Button()
+        pnlActions = New Panel()
+        btnAddDocument = New Button()
+        btnUpdateDocument = New Button()
+        btnDeleteDocument = New Button()
+        CType(dgvArchiveList, ComponentModel.ISupportInitialize).BeginInit()
+        pnlTop.SuspendLayout()
+        pnlSearch.SuspendLayout()
+        pnlActions.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' dgvArchiveList
+        ' 
+        dgvArchiveList.AllowUserToAddRows = False
+        dgvArchiveList.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(230), CByte(226), CByte(180))
+        dgvArchiveList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        dgvArchiveList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvArchiveList.BackgroundColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        dgvArchiveList.BorderStyle = BorderStyle.None
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        dgvArchiveList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        dgvArchiveList.ColumnHeadersHeight = 36
+        dgvArchiveList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvArchiveList.Columns.AddRange(New DataGridViewColumn() {colDocID, colDocTitle, colUploadedBy, colDateTime, colStatus})
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle4.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        DataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        DataGridViewCellStyle4.SelectionForeColor = Color.White
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        dgvArchiveList.DefaultCellStyle = DataGridViewCellStyle4
+        dgvArchiveList.Dock = DockStyle.Fill
+        dgvArchiveList.EnableHeadersVisualStyles = False
+        dgvArchiveList.Font = New Font("Segoe UI", 9F)
+        dgvArchiveList.GridColor = Color.FromArgb(CByte(159), CByte(203), CByte(152))
+        dgvArchiveList.Location = New Point(0, 104)
+        dgvArchiveList.MultiSelect = False
+        dgvArchiveList.Name = "dgvArchiveList"
+        dgvArchiveList.ReadOnly = True
+        dgvArchiveList.RowHeadersVisible = False
+        dgvArchiveList.RowHeadersWidth = 45
+        dgvArchiveList.RowTemplate.Height = 32
+        dgvArchiveList.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvArchiveList.Size = New Size(1297, 432)
+        dgvArchiveList.TabIndex = 5
+        ' 
+        ' colDocID
+        ' 
+        colDocID.FillWeight = 15F
+        colDocID.HeaderText = "Document ID"
+        colDocID.MinimumWidth = 6
+        colDocID.Name = "colDocID"
+        colDocID.ReadOnly = True
+        ' 
+        ' colDocTitle
+        ' 
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        colDocTitle.DefaultCellStyle = DataGridViewCellStyle3
+        colDocTitle.FillWeight = 35F
+        colDocTitle.HeaderText = "Document Title"
+        colDocTitle.MinimumWidth = 6
+        colDocTitle.Name = "colDocTitle"
+        colDocTitle.ReadOnly = True
+        ' 
+        ' colUploadedBy
+        ' 
+        colUploadedBy.FillWeight = 20F
+        colUploadedBy.HeaderText = "Uploaded By"
+        colUploadedBy.MinimumWidth = 6
+        colUploadedBy.Name = "colUploadedBy"
+        colUploadedBy.ReadOnly = True
+        ' 
+        ' colDateTime
+        ' 
+        colDateTime.FillWeight = 20F
+        colDateTime.HeaderText = "Date and Time"
+        colDateTime.MinimumWidth = 6
+        colDateTime.Name = "colDateTime"
+        colDateTime.ReadOnly = True
+        ' 
+        ' colStatus
+        ' 
+        colStatus.FillWeight = 10F
+        colStatus.HeaderText = "Status"
+        colStatus.MinimumWidth = 6
+        colStatus.Name = "colStatus"
+        colStatus.ReadOnly = True
+        ' 
+        ' pnlTop
+        ' 
+        pnlTop.BackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
         pnlTop.Controls.Add(lblTitle)
-
-        ' ?? pnlSearch ?????????????????????????????????????????????
-        pnlSearch.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
-        pnlSearch.Dock      = System.Windows.Forms.DockStyle.Top
-        pnlSearch.Height    = 52
-        pnlSearch.Name      = "pnlSearch"
-
-        lblSearchIcon.AutoSize  = False
-        lblSearchIcon.Text      = "??"
-        lblSearchIcon.Font      = New System.Drawing.Font("Segoe UI", 11)
-        lblSearchIcon.ForeColor = dark
-        lblSearchIcon.BackColor = System.Drawing.Color.Transparent
-        lblSearchIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        lblSearchIcon.Size      = New System.Drawing.Size(32, 32)
-        lblSearchIcon.Location  = New System.Drawing.Point(16, 10)
-        lblSearchIcon.Name      = "lblSearchIcon"
-
-        txtSearch.Font            = New System.Drawing.Font("Segoe UI", 10)
-        txtSearch.Height          = 32
-        txtSearch.Location        = New System.Drawing.Point(52, 10)
-        txtSearch.BackColor       = cream
-        txtSearch.ForeColor       = dark
-        txtSearch.BorderStyle     = System.Windows.Forms.BorderStyle.FixedSingle
-        txtSearch.PlaceholderText = "Type to search documents..."
-        txtSearch.Anchor          = System.Windows.Forms.AnchorStyles.Top Or
-                                    System.Windows.Forms.AnchorStyles.Left Or
-                                    System.Windows.Forms.AnchorStyles.Right
-        txtSearch.Name            = "txtSearch"
-        txtSearch.TabIndex        = 0
-
-        btnSearch.Text                              = "Search"
-        btnSearch.Font                              = New System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold)
-        btnSearch.BackColor                         = dark
-        btnSearch.ForeColor                         = cream
-        btnSearch.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnSearch.FlatAppearance.BorderSize         = 0
-        btnSearch.FlatAppearance.MouseOverBackColor = mid
-        btnSearch.Size                              = New System.Drawing.Size(90, 32)
-        btnSearch.Anchor                            = System.Windows.Forms.AnchorStyles.Top Or
-                                                      System.Windows.Forms.AnchorStyles.Right
-        btnSearch.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnSearch.Name                              = "btnSearch"
-        btnSearch.TabIndex                          = 1
-
-        pnlSearch.Controls.Add(lblSearchIcon)
+        pnlTop.Dock = DockStyle.Top
+        pnlTop.Location = New Point(0, 0)
+        pnlTop.Name = "pnlTop"
+        pnlTop.Size = New Size(1297, 52)
+        pnlTop.TabIndex = 8
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.BackColor = Color.Transparent
+        lblTitle.Dock = DockStyle.Fill
+        lblTitle.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.White
+        lblTitle.Location = New Point(0, 0)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Padding = New Padding(16, 0, 0, 0)
+        lblTitle.Size = New Size(1297, 52)
+        lblTitle.TabIndex = 0
+        lblTitle.Text = "Archive List"
+        lblTitle.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' pnlSearch
+        ' 
+        pnlSearch.BackColor = Color.FromArgb(CByte(230), CByte(226), CByte(180))
         pnlSearch.Controls.Add(txtSearch)
         pnlSearch.Controls.Add(btnSearch)
-
-        ' ?? pnlActions ????????????????????????????????????????????
-        pnlActions.BackColor = cream
-        pnlActions.Dock      = System.Windows.Forms.DockStyle.Bottom
-        pnlActions.Height    = 60
-        pnlActions.Name      = "pnlActions"
-        pnlActions.Padding   = New System.Windows.Forms.Padding(12, 10, 12, 10)
-
-        Dim btnSize As New System.Drawing.Size(120, 38)
-        Dim btnFont As New System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold)
-
-        btnAddDocument.Text                              = "Add"
-        btnAddDocument.Font                              = btnFont
-        btnAddDocument.BackColor                         = dark
-        btnAddDocument.ForeColor                         = cream
-        btnAddDocument.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnAddDocument.FlatAppearance.BorderSize         = 0
-        btnAddDocument.FlatAppearance.MouseOverBackColor = mid
-        btnAddDocument.Size                              = btnSize
-        btnAddDocument.Location                          = New System.Drawing.Point(12, 11)
-        btnAddDocument.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnAddDocument.Name                              = "btnAddDocument"
-        btnAddDocument.TabIndex                          = 2
-
-        btnUpdateDocument.Text                              = "Update"
-        btnUpdateDocument.Font                              = btnFont
-        btnUpdateDocument.BackColor                         = mid
-        btnUpdateDocument.ForeColor                         = System.Drawing.Color.White
-        btnUpdateDocument.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnUpdateDocument.FlatAppearance.BorderSize         = 0
-        btnUpdateDocument.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(159, 203, 152)
-        btnUpdateDocument.Size                              = btnSize
-        btnUpdateDocument.Location                          = New System.Drawing.Point(144, 11)
-        btnUpdateDocument.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnUpdateDocument.Name                              = "btnUpdateDocument"
-        btnUpdateDocument.TabIndex                          = 3
-
-        btnDeleteDocument.Text                              = "Delete"
-        btnDeleteDocument.Font                              = btnFont
-        btnDeleteDocument.BackColor                         = System.Drawing.Color.FromArgb(192, 57, 43)
-        btnDeleteDocument.ForeColor                         = System.Drawing.Color.White
-        btnDeleteDocument.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnDeleteDocument.FlatAppearance.BorderSize         = 0
-        btnDeleteDocument.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(220, 80, 60)
-        btnDeleteDocument.Size                              = btnSize
-        btnDeleteDocument.Location                          = New System.Drawing.Point(276, 11)
-        btnDeleteDocument.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnDeleteDocument.Name                              = "btnDeleteDocument"
-        btnDeleteDocument.TabIndex                          = 4
-
+        pnlSearch.Dock = DockStyle.Top
+        pnlSearch.Location = New Point(0, 52)
+        pnlSearch.Name = "pnlSearch"
+        pnlSearch.Size = New Size(1297, 52)
+        pnlSearch.TabIndex = 7
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtSearch.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Font = New Font("Segoe UI", 10F)
+        txtSearch.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        txtSearch.Location = New Point(3, 9)
+        txtSearch.Name = "txtSearch"
+        txtSearch.PlaceholderText = "Type to search documents..."
+        txtSearch.Size = New Size(1197, 27)
+        txtSearch.TabIndex = 0
+        ' 
+        ' btnSearch
+        ' 
+        btnSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnSearch.BackColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        btnSearch.Cursor = Cursors.Hand
+        btnSearch.FlatAppearance.BorderSize = 0
+        btnSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        btnSearch.FlatStyle = FlatStyle.Flat
+        btnSearch.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnSearch.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        btnSearch.Location = New Point(1205, 6)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(90, 32)
+        btnSearch.TabIndex = 1
+        btnSearch.Text = "Search"
+        btnSearch.UseVisualStyleBackColor = False
+        ' 
+        ' pnlActions
+        ' 
+        pnlActions.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
         pnlActions.Controls.Add(btnAddDocument)
         pnlActions.Controls.Add(btnUpdateDocument)
         pnlActions.Controls.Add(btnDeleteDocument)
-
-        ' ?? dgvArchiveList ????????????????????????????????????????
-        dgvArchiveList.Dock                  = System.Windows.Forms.DockStyle.Fill
-        dgvArchiveList.Name                  = "dgvArchiveList"
-        dgvArchiveList.ReadOnly              = True
-        dgvArchiveList.AllowUserToAddRows    = False
-        dgvArchiveList.AllowUserToDeleteRows = False
-        dgvArchiveList.SelectionMode         = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        dgvArchiveList.MultiSelect           = False
-        dgvArchiveList.RowHeadersVisible     = False
-        dgvArchiveList.AutoSizeColumnsMode   = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        dgvArchiveList.BackgroundColor       = cream
-        dgvArchiveList.BorderStyle           = System.Windows.Forms.BorderStyle.None
-        dgvArchiveList.GridColor             = System.Drawing.Color.FromArgb(159, 203, 152)
-        dgvArchiveList.Font                  = New System.Drawing.Font("Segoe UI", 9)
-        dgvArchiveList.TabIndex              = 5
-
-        dgvArchiveList.ColumnHeadersDefaultCellStyle.BackColor  = dark
-        dgvArchiveList.ColumnHeadersDefaultCellStyle.ForeColor  = cream
-        dgvArchiveList.ColumnHeadersDefaultCellStyle.Font       = New System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold)
-        dgvArchiveList.ColumnHeadersDefaultCellStyle.Alignment  = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        dgvArchiveList.ColumnHeadersHeight                      = 36
-        dgvArchiveList.ColumnHeadersHeightSizeMode              = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvArchiveList.EnableHeadersVisualStyles                = False
-
-        dgvArchiveList.DefaultCellStyle.BackColor          = cream
-        dgvArchiveList.DefaultCellStyle.ForeColor          = dark
-        dgvArchiveList.DefaultCellStyle.SelectionBackColor = mid
-        dgvArchiveList.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White
-        dgvArchiveList.DefaultCellStyle.Alignment         = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        dgvArchiveList.RowTemplate.Height                 = 32
-        dgvArchiveList.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
-
-        colDocID.Name          = "colDocID"      : colDocID.HeaderText      = "Document ID"    : colDocID.FillWeight      = 15
-        colDocTitle.Name       = "colDocTitle"   : colDocTitle.HeaderText   = "Document Title"  : colDocTitle.FillWeight   = 35
-        colDocTitle.DefaultCellStyle.Alignment   = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        colUploadedBy.Name     = "colUploadedBy" : colUploadedBy.HeaderText = "Uploaded By"     : colUploadedBy.FillWeight = 20
-        colDateTime.Name       = "colDateTime"   : colDateTime.HeaderText   = "Date and Time"   : colDateTime.FillWeight   = 20
-        colStatus.Name         = "colStatus"     : colStatus.HeaderText     = "Status"          : colStatus.FillWeight     = 10
-
-        dgvArchiveList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {
-            colDocID, colDocTitle, colUploadedBy, colDateTime, colStatus
-        })
-
-        Me.Controls.Add(dgvArchiveList)
-        Me.Controls.Add(pnlActions)
-        Me.Controls.Add(pnlSearch)
-        Me.Controls.Add(pnlTop)
-        Me.BackColor     = cream
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Name          = "AdminArchiveListPanel"
-        Me.Size          = New System.Drawing.Size(880, 596)
-
-        Me.ResumeLayout(False)
+        pnlActions.Dock = DockStyle.Bottom
+        pnlActions.Location = New Point(0, 536)
+        pnlActions.Name = "pnlActions"
+        pnlActions.Padding = New Padding(12, 10, 12, 10)
+        pnlActions.Size = New Size(1297, 60)
+        pnlActions.TabIndex = 6
+        ' 
+        ' btnAddDocument
+        ' 
+        btnAddDocument.BackColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
+        btnAddDocument.Cursor = Cursors.Hand
+        btnAddDocument.FlatAppearance.BorderSize = 0
+        btnAddDocument.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        btnAddDocument.FlatStyle = FlatStyle.Flat
+        btnAddDocument.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnAddDocument.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        btnAddDocument.Location = New Point(12, 11)
+        btnAddDocument.Name = "btnAddDocument"
+        btnAddDocument.Size = New Size(120, 38)
+        btnAddDocument.TabIndex = 2
+        btnAddDocument.Text = "Add"
+        btnAddDocument.UseVisualStyleBackColor = False
+        ' 
+        ' btnUpdateDocument
+        ' 
+        btnUpdateDocument.BackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
+        btnUpdateDocument.Cursor = Cursors.Hand
+        btnUpdateDocument.FlatAppearance.BorderSize = 0
+        btnUpdateDocument.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(159), CByte(203), CByte(152))
+        btnUpdateDocument.FlatStyle = FlatStyle.Flat
+        btnUpdateDocument.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnUpdateDocument.ForeColor = Color.White
+        btnUpdateDocument.Location = New Point(144, 11)
+        btnUpdateDocument.Name = "btnUpdateDocument"
+        btnUpdateDocument.Size = New Size(120, 38)
+        btnUpdateDocument.TabIndex = 3
+        btnUpdateDocument.Text = "Update"
+        btnUpdateDocument.UseVisualStyleBackColor = False
+        ' 
+        ' btnDeleteDocument
+        ' 
+        btnDeleteDocument.BackColor = Color.FromArgb(CByte(192), CByte(57), CByte(43))
+        btnDeleteDocument.Cursor = Cursors.Hand
+        btnDeleteDocument.FlatAppearance.BorderSize = 0
+        btnDeleteDocument.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(220), CByte(80), CByte(60))
+        btnDeleteDocument.FlatStyle = FlatStyle.Flat
+        btnDeleteDocument.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnDeleteDocument.ForeColor = Color.White
+        btnDeleteDocument.Location = New Point(276, 11)
+        btnDeleteDocument.Name = "btnDeleteDocument"
+        btnDeleteDocument.Size = New Size(120, 38)
+        btnDeleteDocument.TabIndex = 4
+        btnDeleteDocument.Text = "Delete"
+        btnDeleteDocument.UseVisualStyleBackColor = False
+        ' 
+        ' AdminArchiveListPanel
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 17F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
+        Controls.Add(dgvArchiveList)
+        Controls.Add(pnlActions)
+        Controls.Add(pnlSearch)
+        Controls.Add(pnlTop)
+        Name = "AdminArchiveListPanel"
+        Size = New Size(1297, 596)
+        CType(dgvArchiveList, ComponentModel.ISupportInitialize).EndInit()
+        pnlTop.ResumeLayout(False)
+        pnlSearch.ResumeLayout(False)
+        pnlSearch.PerformLayout()
+        pnlActions.ResumeLayout(False)
+        ResumeLayout(False)
     End Sub
 
     Friend WithEvents dgvArchiveList    As System.Windows.Forms.DataGridView
@@ -222,7 +281,6 @@ Partial Class AdminArchiveListPanel
     Friend WithEvents pnlTop            As System.Windows.Forms.Panel
     Friend WithEvents lblTitle          As System.Windows.Forms.Label
     Friend WithEvents pnlSearch         As System.Windows.Forms.Panel
-    Friend WithEvents lblSearchIcon     As System.Windows.Forms.Label
     Friend WithEvents txtSearch         As System.Windows.Forms.TextBox
     Friend WithEvents btnSearch         As System.Windows.Forms.Button
     Friend WithEvents pnlActions        As System.Windows.Forms.Panel

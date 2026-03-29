@@ -21,7 +21,7 @@ Public Class AdminArchiveListPanel
         Dim barH   As Integer = 32
         Dim topOff As Integer = (pnlSearch.Height - barH) \ 2
 
-        lblSearchIcon.SetBounds(margin, topOff, iconW, barH)
+
         btnSearch.SetBounds(pnlSearch.Width - margin - btnW, topOff, btnW, barH)
         txtSearch.SetBounds(margin + iconW + 4, topOff,
                             pnlSearch.Width - margin - btnW - 4 - iconW - margin - 4, barH)
