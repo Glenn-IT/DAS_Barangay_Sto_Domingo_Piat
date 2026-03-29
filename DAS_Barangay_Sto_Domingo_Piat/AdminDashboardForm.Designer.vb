@@ -88,7 +88,7 @@ Partial Class AdminDashboardForm
         Dim sbFont As New System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Regular)
 
         ' ?? btnArchiveList  (A) ???????????????????????????????????
-        btnArchiveList.Text                              = "  ??  Archive List"
+        btnArchiveList.Text                              = "  Archive List"
         btnArchiveList.Font                              = sbFont
         btnArchiveList.BackColor                         = System.Drawing.Color.FromArgb(52, 103, 57)
         btnArchiveList.ForeColor                         = System.Drawing.Color.FromArgb(242, 237, 194)
@@ -104,7 +104,7 @@ Partial Class AdminDashboardForm
         btnArchiveList.TabIndex                          = 0
 
         ' ?? btnUsersList  (B) ????????????????????????????????????
-        btnUsersList.Text                              = "  ??  Users List"
+        btnUsersList.Text                              = "  Users List"
         btnUsersList.Font                              = sbFont
         btnUsersList.BackColor                         = System.Drawing.Color.FromArgb(52, 103, 57)
         btnUsersList.ForeColor                         = System.Drawing.Color.FromArgb(242, 237, 194)
@@ -120,7 +120,7 @@ Partial Class AdminDashboardForm
         btnUsersList.TabIndex                          = 1
 
         ' ?? btnActivityLogs  (C) ?????????????????????????????????
-        btnActivityLogs.Text                              = "  ??  Activity Logs"
+        btnActivityLogs.Text                              = "  Activity Logs"
         btnActivityLogs.Font                              = sbFont
         btnActivityLogs.BackColor                         = System.Drawing.Color.FromArgb(52, 103, 57)
         btnActivityLogs.ForeColor                         = System.Drawing.Color.FromArgb(242, 237, 194)
@@ -136,7 +136,7 @@ Partial Class AdminDashboardForm
         btnActivityLogs.TabIndex                          = 2
 
         ' ?? btnViewProfile  (D) ??????????????????????????????????
-        btnViewProfile.Text                              = "  ??  View Profile"
+        btnViewProfile.Text                              = "  View Profile"
         btnViewProfile.Font                              = sbFont
         btnViewProfile.BackColor                         = System.Drawing.Color.FromArgb(52, 103, 57)
         btnViewProfile.ForeColor                         = System.Drawing.Color.FromArgb(242, 237, 194)
@@ -152,7 +152,7 @@ Partial Class AdminDashboardForm
         btnViewProfile.TabIndex                          = 3
 
         ' ?? btnLogout  (E) — pinned at bottom ????????????????????
-        btnLogout.Text                              = "  ??  Logout"
+        btnLogout.Text                              = "  Logout"
         btnLogout.Font                              = sbFont
         btnLogout.BackColor                         = System.Drawing.Color.FromArgb(52, 103, 57)
         btnLogout.ForeColor                         = System.Drawing.Color.FromArgb(242, 237, 194)

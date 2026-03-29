@@ -107,12 +107,12 @@
 | 10 | Placeholder Data | At least 5 sample rows |
 
 **Checklist:**
-- [ ] Form/Panel created and named `AdminArchiveListForm`
-- [ ] DataGridView added with all 5 columns
-- [ ] Add button added with navigation to New Document (AA)
-- [ ] Update button added with navigation to Update Document (AB)
-- [ ] Delete button added with navigation to Delete confirmation (AC)
-- [ ] Placeholder data populated (5+ rows)
+- [x] Form/Panel created and named `AdminArchiveListPanel`
+- [x] DataGridView added with all 5 columns
+- [x] Add button added with navigation to New Document (AA)
+- [x] Update button added with navigation to Update Document (AB)
+- [x] Delete button added with navigation to Delete confirmation (AC)
+- [x] Placeholder data populated (7 rows)
 
 ---
 
@@ -544,7 +544,7 @@
 | 1 | `AdminLoginForm` | Admin | [x] Done |
 | 2 | `AdminForgotPasswordForm` | Admin | [x] Done |
 | 3 | `AdminDashboardForm` | Admin | [x] Done |
-| 4 | `AdminArchiveListForm` | Admin | [ ] Not Started |
+| 4 | `AdminArchiveListForm` | Admin | [x] Done |
 | 5 | `AdminNewDocumentForm` | Admin | [ ] Not Started |
 | 6 | `AdminUpdateDocumentForm` | Admin | [ ] Not Started |
 | 7 | `AdminDeleteDocumentForm` | Admin | [ ] Not Started |
