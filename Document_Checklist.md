@@ -53,13 +53,13 @@
 | 6 | Go Back to Login Button | `btnBackToLogin` ? navigates back to Admin Login |
 
 **Checklist:**
-- [ ] Form created and named `AdminForgotPasswordForm`
-- [ ] Security Question dropdown added
-- [ ] Answer field added
-- [ ] New Password field added (masked)
-- [ ] Confirm Password field added (masked)
-- [ ] Confirm button added
-- [ ] Go Back to Login button added with navigation
+- [x] Form created and named `AdminForgotPasswordForm`
+- [x] Security Question dropdown added
+- [x] Answer field added
+- [x] New Password field added (masked)
+- [x] Confirm Password field added (masked)
+- [x] Confirm button added
+- [x] Go Back to Login button added with navigation
 
 ---
 
@@ -542,7 +542,7 @@
 | # | Form Name | Side | Status |
 |---|-----------|------|--------|
 | 1 | `AdminLoginForm` | Admin | [x] Done |
-| 2 | `AdminForgotPasswordForm` | Admin | [ ] Not Started |
+| 2 | `AdminForgotPasswordForm` | Admin | [x] Done |
 | 3 | `AdminDashboardForm` | Admin | [ ] Not Started |
 | 4 | `AdminArchiveListForm` | Admin | [ ] Not Started |
 | 5 | `AdminNewDocumentForm` | Admin | [ ] Not Started |
