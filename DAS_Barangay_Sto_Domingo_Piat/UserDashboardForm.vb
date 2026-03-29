@@ -6,8 +6,9 @@ Public Class UserDashboardForm
     End Sub
 
     Private Sub UserDashboardForm_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LoadPanel(New UserArchiveListPanel())
-        HighlightButton(btnArchiveList)
+        LoadPanel(New UserDashboardPanel())
+        HighlightButton(btnDashboard)
+        lblPageTitle.Text = "Dashboard"
     End Sub
 
     Private Sub LoadPanel(panel As UserControl)
@@ -17,7 +18,7 @@ Public Class UserDashboardForm
     End Sub
 
     Private Sub HighlightButton(active As Button)
-        Dim sidebarButtons As Button() = {btnArchiveList, btnUploadDocument, btnSearchArchive, btnViewProfile}
+        Dim sidebarButtons As Button() = {btnDashboard, btnUploadDocument, btnSearchArchive, btnViewProfile}
         For Each btn In sidebarButtons
             btn.BackColor = System.Drawing.Color.FromArgb(52, 103, 57)
             btn.ForeColor = System.Drawing.Color.FromArgb(242, 237, 194)
@@ -26,10 +27,10 @@ Public Class UserDashboardForm
         active.ForeColor = System.Drawing.Color.White
     End Sub
 
-    Private Sub btnArchiveList_Click(sender As Object, e As EventArgs) Handles btnArchiveList.Click
-        LoadPanel(New UserArchiveListPanel())
-        HighlightButton(btnArchiveList)
-        lblPageTitle.Text = "Archive List"
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        LoadPanel(New UserDashboardPanel())
+        HighlightButton(btnDashboard)
+        lblPageTitle.Text = "Dashboard"
     End Sub
 
     Private Sub btnUploadDocument_Click(sender As Object, e As EventArgs) Handles btnUploadDocument.Click

@@ -21,7 +21,7 @@ Partial Class UserDashboardForm
         lblSysTitle       = New System.Windows.Forms.Label()
         lblSysSubTitle    = New System.Windows.Forms.Label()
         lblMenuLabel      = New System.Windows.Forms.Label()
-        btnArchiveList    = New System.Windows.Forms.Button()
+        btnDashboard      = New System.Windows.Forms.Button()
         btnUploadDocument = New System.Windows.Forms.Button()
         btnSearchArchive  = New System.Windows.Forms.Button()
         btnViewProfile    = New System.Windows.Forms.Button()
@@ -91,20 +91,20 @@ Partial Class UserDashboardForm
         Dim sbFont As New System.Drawing.Font("Segoe UI", 10)
 
         ' ?? Sidebar buttons ???????????????????????????????????????
-        btnArchiveList.Text                              = "  Archive List"
-        btnArchiveList.Font                              = sbFont
-        btnArchiveList.BackColor                         = dark
-        btnArchiveList.ForeColor                         = cream
-        btnArchiveList.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
-        btnArchiveList.FlatAppearance.BorderSize         = 0
-        btnArchiveList.FlatAppearance.MouseOverBackColor = mid
-        btnArchiveList.Size                              = sbSize
-        btnArchiveList.Location                          = New System.Drawing.Point(0, 150)
-        btnArchiveList.TextAlign                         = System.Drawing.ContentAlignment.MiddleLeft
-        btnArchiveList.Padding                           = New System.Windows.Forms.Padding(16, 0, 0, 0)
-        btnArchiveList.Cursor                            = System.Windows.Forms.Cursors.Hand
-        btnArchiveList.Name                              = "btnArchiveList"
-        btnArchiveList.TabIndex                          = 0
+        btnDashboard.Text                              = "  Dashboard"
+        btnDashboard.Font                              = sbFont
+        btnDashboard.BackColor                         = dark
+        btnDashboard.ForeColor                         = cream
+        btnDashboard.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
+        btnDashboard.FlatAppearance.BorderSize         = 0
+        btnDashboard.FlatAppearance.MouseOverBackColor = mid
+        btnDashboard.Size                              = sbSize
+        btnDashboard.Location                          = New System.Drawing.Point(0, 150)
+        btnDashboard.TextAlign                         = System.Drawing.ContentAlignment.MiddleLeft
+        btnDashboard.Padding                           = New System.Windows.Forms.Padding(16, 0, 0, 0)
+        btnDashboard.Cursor                            = System.Windows.Forms.Cursors.Hand
+        btnDashboard.Name                              = "btnDashboard"
+        btnDashboard.TabIndex                          = 0
 
         btnUploadDocument.Text                              = "  Upload Document"
         btnUploadDocument.Font                              = sbFont
@@ -175,7 +175,7 @@ Partial Class UserDashboardForm
 
         pnlSidebar.Controls.Add(pnlSidebarTop)
         pnlSidebar.Controls.Add(lblMenuLabel)
-        pnlSidebar.Controls.Add(btnArchiveList)
+        pnlSidebar.Controls.Add(btnDashboard)
         pnlSidebar.Controls.Add(btnUploadDocument)
         pnlSidebar.Controls.Add(btnSearchArchive)
         pnlSidebar.Controls.Add(btnViewProfile)
@@ -249,7 +249,7 @@ Partial Class UserDashboardForm
     Friend WithEvents lblSysTitle       As System.Windows.Forms.Label
     Friend WithEvents lblSysSubTitle    As System.Windows.Forms.Label
     Friend WithEvents lblMenuLabel      As System.Windows.Forms.Label
-    Friend WithEvents btnArchiveList    As System.Windows.Forms.Button
+    Friend WithEvents btnDashboard      As System.Windows.Forms.Button
     Friend WithEvents btnUploadDocument As System.Windows.Forms.Button
     Friend WithEvents btnSearchArchive  As System.Windows.Forms.Button
     Friend WithEvents btnViewProfile    As System.Windows.Forms.Button

@@ -7,6 +7,24 @@ Public Class UserSearchArchivePanel
 
     Private Sub UserSearchArchivePanel_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadPlaceholderData()
+        LayoutSearchBar()
+    End Sub
+
+    Private Sub UserSearchArchivePanel_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        LayoutSearchBar()
+    End Sub
+
+    Private Sub LayoutSearchBar()
+        Dim margin  As Integer = 16
+        Dim btnW    As Integer = 90
+        Dim iconW   As Integer = 36
+        Dim barH    As Integer = 32
+        Dim topOff  As Integer = (pnlSearch.Height - barH) \ 2
+
+        lblSearchIcon.SetBounds(margin, topOff, iconW, barH)
+        btnSearch.SetBounds(pnlSearch.Width - margin - btnW, topOff, btnW, barH)
+        txtSearchQuery.SetBounds(margin + iconW + 4, topOff,
+                                 pnlSearch.Width - margin - btnW - 4 - iconW - margin - 4, barH)
     End Sub
 
     Private Sub LoadPlaceholderData()
@@ -20,20 +38,30 @@ Public Class UserSearchArchivePanel
         dgvSearchResults.Rows.Add("DOC-0007", "Disaster Risk Reduction Plan",   "2025-03-20 09:30", "For Review", "Active")
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Dim query As String = txtSearchQuery.Text.Trim().ToLower()
+    Private Sub FilterResults(query As String)
         LoadPlaceholderData()
-        If query = "" Then Return
+        If query.Trim() = "" Then Return
+        Dim q As String = query.Trim().ToLower()
         For i As Integer = dgvSearchResults.Rows.Count - 1 To 0 Step -1
             Dim row As DataGridViewRow = dgvSearchResults.Rows(i)
             Dim match As Boolean = False
             For Each cell As DataGridViewCell In row.Cells
-                If cell.Value IsNot Nothing AndAlso cell.Value.ToString().ToLower().Contains(query) Then
+                If cell.Value IsNot Nothing AndAlso cell.Value.ToString().ToLower().Contains(q) Then
                     match = True : Exit For
                 End If
             Next
             If Not match Then dgvSearchResults.Rows.RemoveAt(i)
         Next
+    End Sub
+
+    ' Real-time search as user types
+    Private Sub txtSearchQuery_TextChanged(sender As Object, e As EventArgs) Handles txtSearchQuery.TextChanged
+        FilterResults(txtSearchQuery.Text)
+    End Sub
+
+    ' Button search (also works)
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        FilterResults(txtSearchQuery.Text)
     End Sub
 
 End Class

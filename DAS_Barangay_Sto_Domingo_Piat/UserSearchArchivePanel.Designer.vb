@@ -25,8 +25,10 @@ Partial Class UserSearchArchivePanel
         colStatus        = New System.Windows.Forms.DataGridViewTextBoxColumn()
         pnlTop           = New System.Windows.Forms.Panel()
         lblTitle         = New System.Windows.Forms.Label()
+        pnlSearch        = New System.Windows.Forms.Panel()
         txtSearchQuery   = New System.Windows.Forms.TextBox()
         btnSearch        = New System.Windows.Forms.Button()
+        lblSearchIcon    = New System.Windows.Forms.Label()
 
         Me.SuspendLayout()
 
@@ -34,7 +36,7 @@ Partial Class UserSearchArchivePanel
         Dim mid   As System.Drawing.Color = System.Drawing.Color.FromArgb(121, 174, 111)
         Dim cream As System.Drawing.Color = System.Drawing.Color.FromArgb(242, 237, 194)
 
-        ' ?? pnlTop ????????????????????????????????????????????????
+        ' ?? pnlTop (title bar) ????????????????????????????????????
         pnlTop.BackColor = mid
         pnlTop.Dock      = System.Windows.Forms.DockStyle.Top
         pnlTop.Height    = 52
@@ -46,18 +48,39 @@ Partial Class UserSearchArchivePanel
         lblTitle.ForeColor = System.Drawing.Color.White
         lblTitle.BackColor = System.Drawing.Color.Transparent
         lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        lblTitle.Size      = New System.Drawing.Size(260, 52)
-        lblTitle.Location  = New System.Drawing.Point(16, 0)
+        lblTitle.Dock      = System.Windows.Forms.DockStyle.Fill
+        lblTitle.Padding   = New System.Windows.Forms.Padding(16, 0, 0, 0)
         lblTitle.Name      = "lblTitle"
 
+        pnlTop.Controls.Add(lblTitle)
+
+        ' ?? pnlSearch (dedicated search row below title) ??????????
+        pnlSearch.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
+        pnlSearch.Dock      = System.Windows.Forms.DockStyle.Top
+        pnlSearch.Height    = 52
+        pnlSearch.Name      = "pnlSearch"
+        pnlSearch.Padding   = New System.Windows.Forms.Padding(16, 10, 16, 10)
+
+        lblSearchIcon.AutoSize  = False
+        lblSearchIcon.Text      = "??"
+        lblSearchIcon.Font      = New System.Drawing.Font("Segoe UI", 11)
+        lblSearchIcon.ForeColor = dark
+        lblSearchIcon.BackColor = System.Drawing.Color.Transparent
+        lblSearchIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        lblSearchIcon.Size      = New System.Drawing.Size(32, 32)
+        lblSearchIcon.Location  = New System.Drawing.Point(16, 10)
+        lblSearchIcon.Name      = "lblSearchIcon"
+
         txtSearchQuery.Font            = New System.Drawing.Font("Segoe UI", 10)
-        txtSearchQuery.Size            = New System.Drawing.Size(240, 30)
-        txtSearchQuery.Location        = New System.Drawing.Point(316, 11)
+        txtSearchQuery.Height          = 32
+        txtSearchQuery.Location        = New System.Drawing.Point(52, 10)
         txtSearchQuery.BackColor       = cream
         txtSearchQuery.ForeColor       = dark
         txtSearchQuery.BorderStyle     = System.Windows.Forms.BorderStyle.FixedSingle
-        txtSearchQuery.PlaceholderText = "Search documents..."
-        txtSearchQuery.Anchor          = System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right
+        txtSearchQuery.PlaceholderText = "Type to search documents..."
+        txtSearchQuery.Anchor          = System.Windows.Forms.AnchorStyles.Top Or
+                                         System.Windows.Forms.AnchorStyles.Left Or
+                                         System.Windows.Forms.AnchorStyles.Right
         txtSearchQuery.Name            = "txtSearchQuery"
         txtSearchQuery.TabIndex        = 0
 
@@ -67,17 +90,17 @@ Partial Class UserSearchArchivePanel
         btnSearch.ForeColor                         = cream
         btnSearch.FlatStyle                         = System.Windows.Forms.FlatStyle.Flat
         btnSearch.FlatAppearance.BorderSize         = 0
-        btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 80, 44)
-        btnSearch.Size                              = New System.Drawing.Size(80, 30)
-        btnSearch.Location                          = New System.Drawing.Point(564, 11)
-        btnSearch.Anchor                            = System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right
+        btnSearch.FlatAppearance.MouseOverBackColor = mid
+        btnSearch.Size                              = New System.Drawing.Size(90, 32)
+        btnSearch.Anchor                            = System.Windows.Forms.AnchorStyles.Top Or
+                                                      System.Windows.Forms.AnchorStyles.Right
         btnSearch.Cursor                            = System.Windows.Forms.Cursors.Hand
         btnSearch.Name                              = "btnSearch"
         btnSearch.TabIndex                          = 1
 
-        pnlTop.Controls.Add(lblTitle)
-        pnlTop.Controls.Add(txtSearchQuery)
-        pnlTop.Controls.Add(btnSearch)
+        pnlSearch.Controls.Add(lblSearchIcon)
+        pnlSearch.Controls.Add(txtSearchQuery)
+        pnlSearch.Controls.Add(btnSearch)
 
         ' ?? dgvSearchResults ??????????????????????????????????????
         dgvSearchResults.Dock                  = System.Windows.Forms.DockStyle.Fill
@@ -111,18 +134,19 @@ Partial Class UserSearchArchivePanel
         dgvSearchResults.RowTemplate.Height                 = 32
         dgvSearchResults.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(230, 226, 180)
 
-        colDocID.Name       = "colDocID"    : colDocID.HeaderText    = "Document ID"    : colDocID.FillWeight    = 14
-        colDocTitle.Name    = "colDocTitle" : colDocTitle.HeaderText  = "Document Title"  : colDocTitle.FillWeight  = 34
+        colDocID.Name    = "colDocID"    : colDocID.HeaderText    = "Document ID"    : colDocID.FillWeight    = 14
+        colDocTitle.Name = "colDocTitle" : colDocTitle.HeaderText = "Document Title"  : colDocTitle.FillWeight = 34
         colDocTitle.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        colDateTime.Name    = "colDateTime" : colDateTime.HeaderText  = "Date and Time"   : colDateTime.FillWeight  = 20
-        colRemarks.Name     = "colRemarks"  : colRemarks.HeaderText   = "Remarks"          : colRemarks.FillWeight   = 18
-        colStatus.Name      = "colStatus"   : colStatus.HeaderText    = "Status"           : colStatus.FillWeight    = 14
+        colDateTime.Name = "colDateTime" : colDateTime.HeaderText = "Date and Time"   : colDateTime.FillWeight = 20
+        colRemarks.Name  = "colRemarks"  : colRemarks.HeaderText  = "Remarks"          : colRemarks.FillWeight  = 18
+        colStatus.Name   = "colStatus"   : colStatus.HeaderText   = "Status"           : colStatus.FillWeight   = 14
 
         dgvSearchResults.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {
             colDocID, colDocTitle, colDateTime, colRemarks, colStatus
         })
 
         Me.Controls.Add(dgvSearchResults)
+        Me.Controls.Add(pnlSearch)
         Me.Controls.Add(pnlTop)
         Me.BackColor     = cream
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -140,6 +164,8 @@ Partial Class UserSearchArchivePanel
     Friend WithEvents colStatus        As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents pnlTop           As System.Windows.Forms.Panel
     Friend WithEvents lblTitle         As System.Windows.Forms.Label
+    Friend WithEvents pnlSearch        As System.Windows.Forms.Panel
+    Friend WithEvents lblSearchIcon    As System.Windows.Forms.Label
     Friend WithEvents txtSearchQuery   As System.Windows.Forms.TextBox
     Friend WithEvents btnSearch        As System.Windows.Forms.Button
 
