@@ -88,7 +88,7 @@ Partial Class AdminLoginForm
         ' lblSystemTitle
         ' 
         lblSystemTitle.Dock = DockStyle.Top
-        lblSystemTitle.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        lblSystemTitle.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         lblSystemTitle.ForeColor = Color.White
         lblSystemTitle.Location = New Point(10, 11)
         lblSystemTitle.Name = "lblSystemTitle"
@@ -100,7 +100,7 @@ Partial Class AdminLoginForm
         ' lblWelcome
         ' 
         lblWelcome.BackColor = Color.Transparent
-        lblWelcome.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold)
+        lblWelcome.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
         lblWelcome.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
         lblWelcome.Location = New Point(30, 131)
         lblWelcome.Name = "lblWelcome"
@@ -112,7 +112,7 @@ Partial Class AdminLoginForm
         ' lblUsername
         ' 
         lblUsername.BackColor = Color.Transparent
-        lblUsername.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        lblUsername.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         lblUsername.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
         lblUsername.Location = New Point(30, 193)
         lblUsername.Name = "lblUsername"
@@ -124,7 +124,7 @@ Partial Class AdminLoginForm
         ' 
         txtAdminUsername.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
         txtAdminUsername.BorderStyle = BorderStyle.FixedSingle
-        txtAdminUsername.Font = New Font("Segoe UI", 10.0F)
+        txtAdminUsername.Font = New Font("Segoe UI", 10F)
         txtAdminUsername.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
         txtAdminUsername.Location = New Point(30, 218)
         txtAdminUsername.Name = "txtAdminUsername"
@@ -135,7 +135,7 @@ Partial Class AdminLoginForm
         ' lblPassword
         ' 
         lblPassword.BackColor = Color.Transparent
-        lblPassword.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        lblPassword.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         lblPassword.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
         lblPassword.Location = New Point(30, 274)
         lblPassword.Name = "lblPassword"
@@ -147,7 +147,7 @@ Partial Class AdminLoginForm
         ' 
         txtAdminPassword.BackColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
         txtAdminPassword.BorderStyle = BorderStyle.FixedSingle
-        txtAdminPassword.Font = New Font("Segoe UI", 10.0F)
+        txtAdminPassword.Font = New Font("Segoe UI", 10F)
         txtAdminPassword.ForeColor = Color.FromArgb(CByte(52), CByte(103), CByte(57))
         txtAdminPassword.Location = New Point(30, 299)
         txtAdminPassword.Name = "txtAdminPassword"
@@ -163,7 +163,7 @@ Partial Class AdminLoginForm
         btnAdminLogin.FlatAppearance.BorderSize = 0
         btnAdminLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
         btnAdminLogin.FlatStyle = FlatStyle.Flat
-        btnAdminLogin.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnAdminLogin.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnAdminLogin.ForeColor = Color.FromArgb(CByte(242), CByte(237), CByte(194))
         btnAdminLogin.Location = New Point(30, 365)
         btnAdminLogin.Name = "btnAdminLogin"
@@ -179,7 +179,7 @@ Partial Class AdminLoginForm
         btnAdminForgotPassword.FlatAppearance.BorderSize = 0
         btnAdminForgotPassword.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnAdminForgotPassword.FlatStyle = FlatStyle.Flat
-        btnAdminForgotPassword.Font = New Font("Segoe UI", 9.0F, FontStyle.Underline)
+        btnAdminForgotPassword.Font = New Font("Segoe UI", 9F, FontStyle.Underline)
         btnAdminForgotPassword.ForeColor = Color.FromArgb(CByte(121), CByte(174), CByte(111))
         btnAdminForgotPassword.Location = New Point(30, 428)
         btnAdminForgotPassword.Name = "btnAdminForgotPassword"
@@ -191,18 +191,18 @@ Partial Class AdminLoginForm
         ' lblFooter
         ' 
         lblFooter.BackColor = Color.Transparent
-        lblFooter.Font = New Font("Segoe UI", 8.0F)
+        lblFooter.Font = New Font("Segoe UI", 8F)
         lblFooter.ForeColor = Color.FromArgb(CByte(159), CByte(203), CByte(152))
         lblFooter.Location = New Point(0, 621)
         lblFooter.Name = "lblFooter"
         lblFooter.Size = New Size(900, 29)
         lblFooter.TabIndex = 1
-        lblFooter.Text = "© 2025 Barangay Sto. Domingo - Piat  |  All Rights Reserved"
+        lblFooter.Text = "© 2026 Barangay Sto. Domingo - Piat  |  All Rights Reserved"
         lblFooter.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' AdminLoginForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 17.0F)
+        AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(900, 657)
         Controls.Add(pnlBackground)
