@@ -20,6 +20,7 @@ Partial Class AdminForgotPasswordForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize          = New System.Drawing.Size(900, 580)
+        Me.BackColor           = System.Drawing.Color.FromArgb(52, 103, 57)
         Me.Name                = "AdminForgotPasswordForm"
         Me.Text                = "Forgot Password — (Stub)"
         Me.StartPosition       = System.Windows.Forms.FormStartPosition.CenterScreen

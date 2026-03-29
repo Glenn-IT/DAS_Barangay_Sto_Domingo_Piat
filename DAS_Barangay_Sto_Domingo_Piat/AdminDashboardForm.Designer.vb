@@ -20,6 +20,7 @@ Partial Class AdminDashboardForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize          = New System.Drawing.Size(1100, 660)
+        Me.BackColor           = System.Drawing.Color.FromArgb(52, 103, 57)
         Me.Name                = "AdminDashboardForm"
         Me.Text                = "Admin Dashboard — (Stub)"
         Me.StartPosition       = System.Windows.Forms.FormStartPosition.CenterScreen
