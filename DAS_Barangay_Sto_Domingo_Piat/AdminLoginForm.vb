@@ -30,8 +30,9 @@ Public Class AdminLoginForm
 
     Private Sub btnAdminForgotPassword_Click(sender As Object, e As EventArgs) Handles btnAdminForgotPassword.Click
         Dim forgotPw As New AdminForgotPasswordForm()
-        forgotPw.Show()
         Me.Hide()
+        forgotPw.ShowDialog()
+        Me.Show()
     End Sub
 
 End Class

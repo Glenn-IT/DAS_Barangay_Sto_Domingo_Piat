@@ -353,12 +353,12 @@
 | 5 | Forgot Password Link/Button | `btnUserForgotPassword` ? navigates to Forgot Password Page |
 
 **Checklist:**
-- [ ] Form created and named `UserLoginForm`
-- [ ] Title label added
-- [ ] Username field added
-- [ ] Password field added (masked)
-- [ ] Login button added with navigation
-- [ ] Forgot Password button added with navigation
+- [x] Form created and named `UserLoginForm`
+- [x] Title label added
+- [x] Username field added (`txtUserUsername`)
+- [x] Password field added (masked, `txtUserPassword`)
+- [x] Login button added with navigation to `UserDashboardForm`
+- [x] Forgot Password button added with navigation to `UserForgotPasswordForm`
 
 ---
 
@@ -555,7 +555,7 @@
 | 12 | `AdminActivityLogsForm` | Admin | [x] Done |
 | 13 | `AdminViewProfileForm` | Admin | [x] Done |
 | 14 | `AdminLogoutForm` | Admin | [x] Done |
-| 15 | `UserLoginForm` | User | [ ] Not Started |
+| 15 | `UserLoginForm` | User | [x] Done |
 | 16 | `UserDashboardForm` | User | [ ] Not Started |
 | 17 | `UserArchiveListForm` | User | [ ] Not Started |
 | 18 | `UserDeleteDocumentForm` | User | [ ] Not Started |
