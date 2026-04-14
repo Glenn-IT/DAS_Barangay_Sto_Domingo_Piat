@@ -7,7 +7,7 @@
 | Server            | `Glenn\SQLEXPRESS`                         |
 | Database Name     | `dasbsdp`                                  |
 | Authentication    | Windows Authentication (Integrated Security) |
-| Connection String | `Data Source=Glenn\SQLEXPRESS;Initial Catalog=dasbsdp;Integrated Security=True;` |
+| Connection String | `Data Source=Glenn\SQLEXPRESS;Initial Catalog=dasbsdp;Integrated Security=True;TrustServerCertificate=True;` |
 
 ---
 

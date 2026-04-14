@@ -3,10 +3,13 @@
 Public Class dbconstring
 
     ' Default connection string — matches DATABASE.md
+    ' Encrypt=False disables SSL certificate validation for local SQLEXPRESS
     Private Const DefaultConnection As String =
         "Data Source=Glenn\SQLEXPRESS;" &
         "Initial Catalog=dasbsdp;" &
-        "Integrated Security=True;"
+        "Integrated Security=True;" &
+        "TrustServerCertificate=True;" &
+        "Encrypt=False;"
 
     ''' <summary>
     ''' Returns the active connection string.

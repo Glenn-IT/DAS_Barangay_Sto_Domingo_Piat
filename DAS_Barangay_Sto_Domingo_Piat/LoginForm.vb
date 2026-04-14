@@ -1,18 +1,18 @@
 Imports Microsoft.Data.SqlClient
 
-Public Class UserLoginForm
+Public Class LoginForm
     Inherits System.Windows.Forms.Form
 
     Public Sub New()
         InitializeComponent()
     End Sub
 
-    Private Sub btnUserLogin_Click(sender As Object, e As EventArgs) Handles btnUserLogin.Click
-        Dim username As String = txtUserUsername.Text.Trim()
-        Dim password As String = txtUserPassword.Text.Trim()
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Dim username As String = txtUsername.Text.Trim()
+        Dim password As String = txtPassword.Text.Trim()
 
         If username = "" OrElse password = "" Then
-            MessageBox.Show("Please enter your username and password.", "User Login",
+            MessageBox.Show("Please enter your username and password.", "Login",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -23,7 +23,7 @@ Public Class UserLoginForm
 
                 Dim sql As String =
                     "SELECT UserCode, UserType, Status FROM tbl_Users " &
-                    "WHERE Username = @Username AND PasswordHash = @Password AND UserType = 'User'"
+                    "WHERE Username = @Username AND PasswordHash = @Password"
 
                 Using cmd As New SqlCommand(sql, con)
                     cmd.Parameters.AddWithValue("@Username", username)
@@ -31,39 +31,48 @@ Public Class UserLoginForm
 
                     Using reader As SqlDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            Dim status As String = reader("Status").ToString()
+                            Dim userType As String = reader("UserType").ToString()
+                            Dim status   As String = reader("Status").ToString()
 
                             If status = "Inactive" Then
                                 reader.Close()
                                 ActivityLogger.Log(username, "Failed",
-                                    "User login failed — account is inactive.")
+                                    $"{userType} login failed — account is inactive.")
                                 MessageBox.Show("Your account is inactive. Please contact the system administrator.",
-                                                "User Login", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                                "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                                 Return
                             End If
 
                             ' Store session
                             SessionManager.Username = username
-                            SessionManager.UserType  = reader("UserType").ToString()
+                            SessionManager.UserType  = userType
                             SessionManager.UserCode  = reader("UserCode").ToString()
                             reader.Close()
 
-                            ActivityLogger.Log(username, "Success", "User logged in successfully.")
+                            ActivityLogger.Log(username, "Success",
+                                $"{userType} logged in successfully.")
 
-                            Dim dashboard As New UserDashboardForm()
                             Me.Hide()
-                            dashboard.ShowDialog()
-                            Me.Show()
+
+                            If userType = "Admin" Then
+                                Dim dashboard As New AdminDashboardForm()
+                                dashboard.ShowDialog()
+                            Else
+                                Dim dashboard As New UserDashboardForm()
+                                dashboard.ShowDialog()
+                            End If
+
                             SessionManager.Clear()
-                            txtUserUsername.Clear()
-                            txtUserPassword.Clear()
-                            txtUserUsername.Focus()
+                            Me.Show()
+                            txtUsername.Clear()
+                            txtPassword.Clear()
+                            txtUsername.Focus()
                         Else
                             reader.Close()
                             ActivityLogger.Log(username, "Failed",
-                                "User login failed — invalid username or password.")
+                                "Login failed — invalid username or password.")
                             MessageBox.Show("Invalid username or password.",
-                                            "User Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                            "Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     End Using
                 End Using
@@ -75,11 +84,18 @@ Public Class UserLoginForm
         End Try
     End Sub
 
-    Private Sub btnUserForgotPassword_Click(sender As Object, e As EventArgs) Handles btnUserForgotPassword.Click
-        Dim forgotPw As New UserForgotPasswordForm()
+    Private Sub btnForgotPassword_Click(sender As Object, e As EventArgs) Handles btnForgotPassword.Click
+        Dim forgotPw As New AdminForgotPasswordForm()
         Me.Hide()
         forgotPw.ShowDialog()
         Me.Show()
+    End Sub
+
+    ' Allow pressing Enter on the password field to trigger login
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin_Click(sender, e)
+        End If
     End Sub
 
 End Class
